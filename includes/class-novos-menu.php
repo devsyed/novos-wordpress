@@ -27,6 +27,15 @@ class NovosMenu
             'novos_add_text_file',
             array(__CLASS__, 'render_add_text_files_view')
         );
+        
+        add_submenu_page(
+            'novos_text_files', 
+            'View All Text', 
+            'View All Text', 
+            'manage_options',
+            'novos_view_all_text',
+            array(__CLASS__, 'render_view_all_text')
+        );
     }
 
     public static function render_main_view()
@@ -36,6 +45,10 @@ class NovosMenu
 
     public static function render_add_text_files_view(){
         include_once  NOVOS_ADMIN_PATH . '/views/add_text_file.php';
+    }
+    
+    public static function render_view_all_text(){
+        include_once  NOVOS_ADMIN_PATH . '/views/view_all_text.php';
     }
 }
 

@@ -31,8 +31,8 @@ jQuery(document).ready(function($){
                 formData:$(this).serialize(),
             },
             success: function(res) {
-                console.log(res)
-                // window.location.href = 'https://wbwp.test/wp-admin/admin.php?page=novos_text_files';
+                // console.log(res)
+                window.location.href = 'https://wbwp.test/wp-admin/admin.php?page=novos_text_files';
                 
             },
             error: function(err) {

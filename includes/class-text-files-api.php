@@ -70,6 +70,17 @@ class NovosTextFilesAPI
         return $files;
     }
 
+    public function getAllContent()
+    {
+        try {
+            $response = $this->ntfMakeRequest('/get_contents', 'GET', [], true);
+        } catch (\Throwable $th) {
+            return $this->novosFormatError('failed-fetching-content', 'Could not fetch the content. Error: ' . $th->getMessage());
+        }
+        // not using formatResponse for this, because its just text.
+        return $response;
+    }
+
     public function viewFile($fileRefName)
     {
         try {
